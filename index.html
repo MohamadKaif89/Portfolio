@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaif — Full-stack developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Kaif, a full-stack developer who builds fast, accessible web products with React, Node.js, and TypeScript."
+    />
+    <meta name="author" content="Kaif" />
+    <meta name="theme-color" content="#292F36" />
+    <link rel="canonical" href="https://example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kaif — Full-stack developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Kaif, a full-stack developer who builds fast, accessible web products with React, Node.js, and TypeScript."
+    />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kaif — Full-stack developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Kaif, a full-stack developer who builds fast, accessible web products with React, Node.js, and TypeScript."
+    />
+    <meta name="twitter:image" content="https://example.com/og.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var saved = localStorage.getItem("portfolio-theme");
+        if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+      } catch (error) {
+        /* Storage can be blocked. The default theme on the html tag still applies. */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

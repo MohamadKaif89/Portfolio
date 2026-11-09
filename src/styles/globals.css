@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Role tokens. Dark values are the Figma frame.
+  Light values keep the same mint fills and darken accent text so it stays AA.
+*/
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: 41 47 54;
+  --deep: 26 30 35;
+  --ink: 255 255 255;
+  --accent: 18 247 214;
+  --accent-ink: 18 247 214;
+  --soft: 151 249 235;
+  --mist: 67 69 77;
+  --line: 255 255 255;
+  --field: 32 37 43;
+  --paper: 255 255 255;
+  --on-accent: 41 47 54;
+  --danger: 255 138 148;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: 236 242 241;
+  --deep: 255 255 255;
+  --ink: 26 30 35;
+  --accent: 18 247 214;
+  --accent-ink: 7 102 90;
+  --soft: 210 248 242;
+  --mist: 90 98 110;
+  --line: 26 30 35;
+  --field: 255 255 255;
+  --paper: 255 255 255;
+  --on-accent: 26 30 35;
+  --danger: 168 32 48;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-body text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(var(--accent));
+    color: rgb(var(--on-accent));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+  }
+
+  dialog {
+    @apply m-auto max-h-[85vh] w-[min(100%-2rem,40rem)] rounded-sheet border border-line/15 bg-deep p-0 text-ink shadow-lift;
+  }
+
+  dialog::backdrop {
+    background: rgb(0 0 0 / 0.62);
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-pill bg-accent px-4 py-2 font-display text-button text-on-accent;
+  }
+
+  .ripple {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    border-radius: 9999px;
+    background: rgb(var(--canvas) / 0.45);
+    animation: ripple 0.6s ease-out forwards;
+  }
+}
+
+@keyframes ripple {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(16);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

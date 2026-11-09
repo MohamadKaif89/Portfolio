@@ -1,0 +1,9 @@
+{
+  "name": "Kaif — Full-stack developer",
+  "short_name": "Kaif",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#292F36",
+  "theme_color": "#292F36",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
